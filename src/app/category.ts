@@ -1,8 +1,8 @@
 export interface Category{
     name: string;
-    type: string;
+    type?: string;
     estimatedExpiryTime: number;
-    unit?: string;
+    unit: string;
     density?: number;
     tags: Array<string>;
 }
