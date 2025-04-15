@@ -1,2 +1,10 @@
-<button (click)="getCategories()">Get Categories</button>
-<button (click)="showCategories()">Show Categories</button>
+<mat-sidenav-container>
+    <mat-sidenav opened fixedInViewport=true mode="side">Test</mat-sidenav>
+    <mat-sidenav-content>
+        <app-item-add>
+
+        </app-item-add>
+        <button (click)="getCategories()">Get Categories</button>
+        <button (click)="showCategories()">Show Categories</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>

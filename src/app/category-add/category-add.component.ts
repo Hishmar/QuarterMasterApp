@@ -2,10 +2,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Category } from '../category';
 import { units } from '../units';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog'
 @Component({
   selector: 'app-category-add',
-  imports: [ReactiveFormsModule, MatDialogModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './category-add.component.html',
   styleUrl: './category-add.component.css'
 })
