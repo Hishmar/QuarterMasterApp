@@ -24,7 +24,7 @@ export class ConnectorService {
   }
 
   addCategory(category:Category){
-    this.http.post(environment.apiUrl+"/categories",category);
+    this.http.post(environment.apiUrl+"/categories",category).subscribe();
   }
 
   updateCategory(category:Category){

@@ -1,9 +1,19 @@
 <mat-sidenav-container>
-    <mat-sidenav opened fixedInViewport=true mode="side">Test</mat-sidenav>
+    <mat-sidenav opened fixedInViewport=true mode="side">
+        <button (click)="changeView('item-add')">Add Item</button>
+        <button (click)="changeView('item-list')">Inventory</button>
+        <button (click)="changeView('category-list')">Categories</button>
+    </mat-sidenav>
     <mat-sidenav-content>
-        <app-item-add>
-
-        </app-item-add>
+        @if(currentView == "item-add"){
+            <app-item-add (newCategoryEvent)="createCategory($event)" (newItemEvent)="createItem($event)" [categories]="categories"></app-item-add>
+        }
+        @if(currentView == "item-list"){
+            <app-item-list [itemArray]="items"></app-item-list>
+        }
+        @if(currentView == "category-list"){
+            <app-category-list [categories]="categories"></app-category-list>
+        }
         <button (click)="getCategories()">Get Categories</button>
         <button (click)="showCategories()">Show Categories</button>
     </mat-sidenav-content>

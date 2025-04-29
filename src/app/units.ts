@@ -11,85 +11,85 @@ export const units:Unit[] = [
     {
         fullName: "Count",
         abbreviation: "ct",
-        measurement: "count",
+        measurement: "COUNT",
         conversion: 1
     },
     {
         fullName: "Grams",
         abbreviation: "g",
-        measurement: "weight",
+        measurement: "WEIGHT",
         conversion: 1
     },
     {
-        fullName: "Millileters",
+        fullName: "Mililiters",
         abbreviation: "mL",
-        measurement: "volume",
+        measurement: "VOLUME",
         conversion: 1
     },
     {
         fullName:"Kilograms",
         abbreviation: "kg",
-        measurement: "weight",
+        measurement: "WEIGHT",
         conversion: 1000
     },
     {
         fullName:"Pounds",
         abbreviation:"lbs",
-        measurement:"weight",
+        measurement:"WEIGHT",
         conversion: 453.592
     },
     {
         fullName:"Ounces",
         abbreviation:"oz",
-        measurement:"weight",
+        measurement:"WEIGHT",
         conversion: 28.3495
     },
     {
         fullName:"Liters",
         abbreviation:"L",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion: 1000
     },
     {
         fullName:"Teaspoon",
         abbreviation:"tsp",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion: 4.92892
     },
     {
         fullName:"Tablespoon",
         abbreviation:"Tbsp",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion:14.7868,   
     },
     {
         fullName:"Fluid Ounces",
         abbreviation:"fl oz",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion:29.5735
     },
     {
         fullName:"Cup",
         abbreviation:"cp",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion:240
     },
     {
         fullName:"Pint",
         abbreviation:"pt",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion: 473.176
     },
     {
         fullName:"Quart",
         abbreviation:"qt",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion:946.353
     },
     {
         fullName:"Gallon",
         abbreviation:"gal",
-        measurement:"volume",
+        measurement:"VOLUME",
         conversion:3785.41
     },
 ]

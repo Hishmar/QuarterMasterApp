@@ -1,21 +1,45 @@
 <div>
-    <form [formGroup]="itemForm">
+    <form [formGroup]="itemForm" (ngSubmit)="createItem()">
         <label>
             Category
             <input type="text" 
-                   formControlName="category"
                    aria-label="category"
                    matInput
-                   [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
+                   [matAutocomplete]="auto"
+                   formControlName="category"
+                   >
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="getCategoryName" (optionSelected)="updateCategory($event.option.value)">
                 @for (category of categories; track category.name){
                     <mat-option [value]="category">{{category.name}}</mat-option>
                 }
             </mat-autocomplete>
             <button (click)="openNewCategory()">New Category</button>
         </label>
+        @if (newCategory) {
+        <app-category-add (newCategoryEvent)="this.newCategoryCreated($event)"></app-category-add>
+        }
+        
+        <label>
+            Size {{this.unit}}
+            <input type="number"
+                   formControlName="size">
+        </label>
+        <label>
+            Date Bought
+            <input matInput formControlName="expiryStart"[matDatepicker]="expiryStart">
+            <mat-datepicker-toggle matIconSuffix [for]="expiryStart"></mat-datepicker-toggle>
+            <mat-datepicker #expiryStart></mat-datepicker>
+        </label>
+        <label>
+            Expiry Date
+            <input matInput formControlName="expectedExpiry"[matDatepicker]="expectedExpiry">
+            <mat-datepicker-toggle matIconSuffix [for]="expectedExpiry"></mat-datepicker-toggle>
+            <mat-datepicker #expectedExpiry></mat-datepicker>
+        </label>
         <label>
             Amount
+            <input type="number" formControlName="amount">
         </label>
+        <button type="submit">Submit</button>
     </form>
 </div>

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Category } from '../category';
-import { units } from '../units';
+import { units,Unit } from '../units';
 @Component({
   selector: 'app-category-add',
   imports: [ReactiveFormsModule],
@@ -13,14 +13,14 @@ export class CategoryAddComponent {
   @Input() initialName:String = ''
   categoryForm = new FormGroup({
     name: new FormControl(this.initialName, [Validators.required]),
-    unit: new FormControl(units[0],[Validators.required]), 
+    unit: new FormControl<Unit>(units[0]), 
     density: new FormControl(),
-    estimatedExpiryTime: new FormControl(-1)
+    estimatedExpiryTime: new FormControl(7)
   })
   createCategory(){
     let newCat:Category = {
       name: this.categoryForm.value.name as string,
-      unit: this.categoryForm.value.unit?.measurement as string,
+      defaultUnit: this.categoryForm.value.unit?.measurement as string,
       density: this.categoryForm.value.density,
       estimatedExpiryTime: this.categoryForm.value.estimatedExpiryTime as number,
       tags:[]
